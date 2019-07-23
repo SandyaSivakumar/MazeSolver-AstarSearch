@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maze Runner</title>
+	<style type="text/css">
+		body{
+			font-family: "Times New Roman",sans-serif;
+		}
+
+		table{	
+			display: inline;
+		}
+		td{
+			height: 30px;
+			width: 30px;
+			text-align:center;
+		}
+		.on{
+			background-color: black;
+		}
+		.off{
+			background-color: #ddd;
+		}
+		.startOn{
+	    	background-color: green;
+		}
+		.endOn{
+	        background-color: red;
+		}
+		.path{
+	        background-color: #0059f7;		    
+		}
+		.visited{
+	        background-color: #7eebf3;		    
+		}
+		#beauty{
+			text-align:center;
+		}
+		#status{
+			width:200px;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			border:2px solid black;
+		}
+		.allButtons{
+			border:1px black solid;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+			margin-top: 5px;
+			width: 200px;
+			font-size: 20px;
+		}
+		div{
+
+			font-size: 30px;
+			text-align: center;
+		}
+		h1{
+			text-align: center;
+		}
+		#right{
+			float: right;
+			margin-right: 5%;
+		}
+		#slider{
+			width: 200px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	
+
+	<table id="main">
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+<!--
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+		<tr>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+			<td class="off"></td>
+		</tr>
+-->
+	</table>
+
+	
+	<div id="right">
+	  <h1 id="h1">Maze Solver</h1>
+	  <div id="solver" style="display:none">
+		<select id="hueristic" width="200px">
+		  <option selected value="MD">Manhattan Distance</option>
+		  <option value="PD">Pythagorean Distance</option>
+		</select><br>
+		<input id="alpha" type="number" step="0.01" min="0" value="1">
+		<button class="allButtons" id="solveMaze">Start</button>
+		<button class="allButtons" id="reset">Reset</button>
+<!--		<button class="allButtons" id="trace_back">Trace Back</button> -->
+		<div>Steps:<span id="count">0</span></div>
+	  </div>
+	  
+	  <div id="builder">
+		<h3 id="h1">Make Maze</h3>
+		<input type="range" list="tickmarks" id="slider" max="20" min="1" value="10"/>
+		<datalist id="tickmarks">
+		  <option value="1">
+		  <option value="5">
+		  <option value="10">
+		  <option value="15">
+		  <option value="20">	
+		</datalist>
+		<button class="allButtons" id="startPoint">Add Start Point</button>
+		<button class="allButtons" id="endPoint">Add End Point</button>
+		<button class="allButtons" id="walls">Add Walls</button>
+		<br/>
+		<button class="allButtons" id="done">Done</button>
+	  </div>
+	  <div id="status">
+		<h3 id="beauty"></h3>
+	  </div>
+	</div>
+</body>
+
+<script src="gen.js">
+	
+</script>
+	
+</html>
